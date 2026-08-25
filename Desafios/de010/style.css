@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/* Ativa estas regras apenas em telas de até 768px (celulares e tablets) */
+@media (max-width: 768px) {
+  
+  .container-listas {
+    flex-direction: column; /* Em vez de lado a lado, as listas ficam uma abaixo da outra */
+    align-items: center;    /* Centraliza as listas na tela do celular */
+    gap: 15px;              /* Diminui um pouco o espaço entre elas */
+  }
+
+  article {
+    width: 100%;            /* Faz o article ocupar a largura inteira da tela do celular */
+    padding: 15px;          /* Evita que o texto encoste nas bordas físicas do aparelho */
+  }
+  
+}
+
+@font-face {
+    font-family: 'minhafonte';
+    src: url('fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h2{
+    font-family: 'minhafonte', Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'minhafonte2';
+    src: url('fontes/idroids.otf') format('opentype');
+    font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h3{
+    font-family: 'minhafonte2', Arial, sans-serif;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #43aa70;
+    
+    
+    
+}
+
+.titulosite, .subtitulo {
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+nav{
+    padding: 20px;
+}
+nav > a{
+    color: white;
+    
+}
+header{
+    background-image:linear-gradient(to top, #1A5C38, #3bc277);
+    width: 100%;
+    height: 150px;
+    padding: 12px 2px 0px 10px; 
+}
+
+article{
+    background-color: white;
+    text-align: center;
+    padding: 40px;
+    color: black;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 2%;
+    line-height: 1.6;
+    
+}
+
+article h2, h3, h4{
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+article p{
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    text-align: justify;
+}
+article img {
+  max-width: 100%; /* impede a imagem de vazar da largura do article */
+  height: auto;    /* mantém a proporção original da imagem */
+  display: block;  /* remove espaços em branco indesejados abaixo da foto */
+  
+}
+
+h4{
+    background-color: #43aa70;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.container-listas {
+  display: flex;
+  gap: 80px; /* espaço entre as duas listas */
+  justify-content: center;
+  margin: 10px;
+}
+
+aside{
+    background-color: #C5EBD6;
+    padding: 20px;
+    border-radius: 2%;
+}
+
+
+
+footer{
+    font-weight: bold; 
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
