@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+/* =========================================
+   1. IMPORTAÇÃO E VARIÁVEIS (:root)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root {
+    --cor-fundo-site: #F9F9F9;
+    --cor-fundo-hero: #1A1A1A; /* Escuro para destacar o vídeo */
+    --cor-texto-escuro: #333333;
+    --cor-texto-claro: #FFFFFF;
+    --cor-botao: #00C853; /* Verde conversão */
+    --cor-botao-hover: #009624;
+    --cor-alerta: #FF3D00;
+
+    --fonte-titulos: 'Passion One', cursive, sans-serif;
+    --fonte-destaque: 'Sriracha', cursive, sans-serif;
+    --fonte-corpo: 'Fraunces', serif;
+}
+
+/* =========================================
+   2. RESET GERAL E CONFIGURAÇÕES BÁSICAS
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Impede que o padding quebre o tamanho das caixas */
+}
+
+body {
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto-escuro);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulos);
+    font-weight: 400;
+}
+
+/* Criando o "respiro" geral para o conteúdo não colar na tela */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. BARRA DE ESCASSEZ E HERO (CABEÇALHO)
+========================================= */
+.barra-escassez {
+    background-color: var(--cor-alerta);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hero-vsl {
+    background-color: var(--cor-fundo-hero);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-vsl h1 {
+    /* Técnica Clamp: Cresce e diminui automaticamente com a tela */
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.1;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.hero-vsl p {
+    font-size: clamp(16px, 2vw, 22px);
+    max-width: 700px;
+    margin: 0 auto;
+    color: #CCCCCC;
+}
+
+/* =========================================
+   4. ÁREA DO VÍDEO E BOTÃO CTA
+========================================= */
+.area-video {
+    text-align: center;
+    margin-top: -30px; /* Faz o vídeo subir um pouco por cima do cabeçalho */
+    padding-top: 0;
+}
+
+.area-video iframe {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9; /* Mantém o formato perfeito do YouTube */
+    border-radius: 12px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+    background-color: #000;
+}
+
+.botao-compra {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0px 8px 15px rgba(0, 200, 83, 0.4);
+    transition: all 0.3s ease;
+}
+
+.botao-compra span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.botao-compra:hover {
+    background-color: var(--cor-botao-hover);
+    transform: scale(1.05); /* Efeito de crescer ao passar o mouse */
+    box-shadow: 0px 10px 20px rgba(0, 200, 83, 0.6);
+}
+
+/* =========================================
+   5. ENTREGÁVEIS (E-BOOK E LISTA)
+========================================= */
+.entregaveis h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.conteudo-entregaveis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.imagem-ebook {
+    width: 100%;
+    max-width: 300px;
+}
+
+.lista-beneficios {
+    font-size: 18px;
+    max-width: 500px;
+    list-style-position: inside;
+}
+
+.lista-beneficios li {
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   6. PROVA SOCIAL (DEPOIMENTOS)
+========================================= */
+.prova-social {
+    background-color: #EEEEEE;
+    border-radius: 20px;
+}
+
+.prova-social h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.grade-depoimentos {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.depoimento {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.05);
+    max-width: 400px;
+    
+    /* Flexbox interno para a foto e o texto ficarem lado a lado */
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* A mágica da foto redonda! */
+.foto-cliente {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Faz o quadrado virar um círculo */
+    object-fit: cover; /* Garante que a foto não fique achatada */
+}
+
+.texto-depoimento blockquote {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.texto-depoimento cite {
+    font-family: var(--fonte-destaque);
+    font-weight: bold;
+    color: var(--cor-botao);
+}
+
+/* =========================================
+   7. GARANTIA
+========================================= */
+.conteudo-garantia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 3px dashed var(--cor-botao);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.imagem-garantia {
+    width: 150px;
+}
+
+.texto-garantia h2 {
+    font-size: 32px;
+}
+
+/* =========================================
+   8. RODAPÉ
+========================================= */
+footer {
+    background-color: var(--cor-fundo-hero);
+    color: #888888;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+/* =========================================
+   9. RESPONSIVIDADE (CELULARES)
+========================================= */
+@media (max-width: 768px) {
+    /* Muda entregáveis, depoimentos e garantia para vertical no celular */
+    .conteudo-entregaveis,
+    .grade-depoimentos,
+    .conteudo-garantia {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .depoimento {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+}
