@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+div.site {
+    display: grid;
+    grid-template: auto auto auto / auto auto auto;
+
+    gap: 5px;
+    height: 200px;
+    place-items: normal normal;
+    place-content: normal normal;
+}
+
+.topo {
+    background-color: brown;
+    grid-row: 1 / 1 ;
+    grid-column: 1 / 4;
+}
+
+.menu {
+
+}
+
+.principal {
+
+}
+
+.secundario {
+
+}
+
+.rodape {
+
+}
